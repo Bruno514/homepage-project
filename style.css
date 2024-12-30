@@ -1,0 +1,119 @@
+:root {
+  --bg-primary: #4191b1;
+  --fg-primary: #808080;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("./assets/fonts/PlayfairDisplay/PlayfairDisplay-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto/Roboto-Regular.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Playfair Display";
+  font-weight: lighter;
+}
+p {
+  font-family: "Roboto";
+}
+.icon {
+  width: 1.5rem;
+  font-size: 1.5rem;
+}
+
+#photo1 {
+  height: 100%;
+  display: flex;
+  max-width: 20rem;
+  width: 100%;
+  box-shadow: -1px 0 3px rgba(50, 50, 0, 0.5);
+}
+#photo2 {
+  display: block;
+  width: 100%;
+}
+
+.header-wrapper {
+  filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+}
+.header-background {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: clamp(15rem, 105vw, 25rem);
+  z-index: 0;
+  padding: 2rem;
+}
+.header-background::before {
+  content: "";
+  background-color: var(--bg-primary);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 61%, 0% 85%);
+}
+.background {
+  display: flex;
+  align-items: end;
+  justify-content: start;
+  background-size: cover;
+  background-position: center;
+  background-image: url("assets/imgs/header-pic.jpg");
+  padding: 1rem;
+}
+.background h4 {
+  color: white;
+  font-size: 6rem;
+  line-height: 6rem;
+}
+
+section.about {
+  padding-inline: 1rem;
+  margin-top: 2rem;
+}
+section.about h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+section.about p {
+  color: var(--fg-primary);
+  line-height: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  #photo1 {
+    float: left;
+  }
+
+  /* .blue-shape:before {
+    clip-path: polygon(0 0, 100% 0%, 100% 61%, 0% 100%);
+  } */
+}
+
+@media screen and (min-width: 1024px) {
+  /* .blue-shape:before {
+    clip-path: polygon(0 0, 100% 0%, 100% 61%, 0% 100%);
+  }  */
+}
