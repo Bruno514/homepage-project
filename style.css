@@ -27,13 +27,15 @@ h4 {
 }
 p {
   font-family: "Roboto";
+  box-shadow: none;
 }
+
 .icon {
   width: 1.5rem;
   font-size: 1.5rem;
 }
 
-#photo1 {
+#header-image {
   height: 25rem;
   display: flex;
   max-width: 20rem;
@@ -41,35 +43,36 @@ p {
   box-shadow: -1px 0 3px rgba(50, 50, 0, 0.5);
   margin: 0 auto;
 }
-#photo2 {
-  display: block;
-  width: 100%;
-}
 
-.header-wrapper {
+header {
+  display: flow-root;
+}
+.h-shadow-wrapper {
   filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
 }
-.header-background {
+.h-background {
   display: flex;
   justify-content: center;
-  position: relative;
+  position: absolute;
   flex-direction: column;
-  /* height: clamp(15rem, 105vw, 25rem); */
-  z-index: 0;
+  width: 100%;
+  z-index: -9999;
   padding: 2rem;
 }
-.header-background::before {
+.h-background::before {
   content: "";
   background-color: var(--bg-primary);
   position: absolute;
-  z-index: -1;
+  height: 65rem;
+  z-index: -9999;
+  width: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   clip-path: polygon(0 0, 100% 0, 100% 25%, 0% 38%);
 }
-.background {
+.header-image-wrapper {
   display: flex;
   align-items: end;
   justify-content: start;
@@ -77,64 +80,81 @@ p {
   background-position: center;
   background-image: url("assets/imgs/header-pic.jpg");
 }
-.author-name {
+.header-author {
   color: white;
   font-size: 3rem;
   text-align: right;
 }
 
-section.about {
+.about {
   padding-inline: 1rem;
+  margin-top: 2rem;
+  filter: none;
+  position: relative;
 }
-section.about h1 {
+.about-title {
   text-align: center;
   font-size: 2rem;
   margin-top: 4rem;
 }
-section.about p {
+.about-text {
   color: var(--fg-primary);
   line-height: 1.5rem;
 }
 
-.links {
+.header-links {
   display: flex;
   justify-content: center;
   gap: 1rem;
   padding: 1rem;
 }
 
+#footer-image {
+  display: block;
+  width: 100%;
+}
+
 @media screen and (min-width: 768px) {
-  #photo1 {
-    transform: scale(1.1, 1.4);
+  #header-image {
+    transform: scale(1.135, 1.4);
     height: 15rem;
     transform-origin: bottom right;
     float: left;
-    margin-right: 2rem;
     overflow: visible;
+    margin-right: 1rem;
   }
-  .header-background::before {
+  .h-background::before {
     clip-path: polygon(0 0, 100% 0, 100% 45%, 0% 75%);
+    height: 25rem;
   }
-  section.about {
-    margin: 2rem;
+  .about {
+    display: flow-root;
+    box-shadow: 0 0 1rem gray;
     margin-top: 8rem;
-    padding-bottom: 4rem;
+    margin-inline: 3rem;
     background-color: white;
   }
-  section.about h1 {
+  .about-title {
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    margin-top: 4rem;
+    padding: 1rem;
   }
-  section.about .links {
+  .about-text {
+    margin-inline: 1rem;
+    margin-bottom: 4rem;
+  }
+  .header-links {
     display: none;
   }
 
-  .background {
+  .header-image-wrapper {
     position: relative;
     align-items: start;
     justify-content: end;
     margin-bottom: 1rem;
   }
-  .background h4 {
+  .header-image-wrapper .header-author {
     position: absolute;
     right: -13rem;
     white-space: nowrap;
