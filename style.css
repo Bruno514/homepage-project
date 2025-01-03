@@ -163,4 +163,38 @@ header {
 }
 
 @media screen and (min-width: 1024px) {
+  .about {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    box-shadow: none;
+    margin-top: 2rem;
+    flex-grow: 0;
+    flex-shrink: 1;
+    gap: 0;
+  }
+  .about .wrapper {
+    background-color: white;
+    box-shadow: -1px 6px 3px rgba(50, 50, 0, 0.5);
+  }
+  #header-image {
+    float: none;
+    transform: none;
+    height: 25rem;
+    flex-grow: 1;
+    width: 90rem;
+    margin-right: 0;
+  }
+  .about-text {
+    flex-grow: 0;
+    flex-shrink: 1;
+  }
+  .header-image-wrapper {
+    align-items: end;
+    justify-content: start;
+  }
+  .header-image-wrapper .header-author {
+    margin-left: 0;
+    right: 0;
+  }
 }
