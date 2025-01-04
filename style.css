@@ -126,7 +126,9 @@ main > h1 {
 }
 
 .projects {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
@@ -245,6 +247,9 @@ footer .flex-wrapper {
   .header-links {
     display: none;
   }
+  .projects {
+    grid-template-columns: 1fr 1fr;
+  }
 
   .header-image-wrapper {
     position: relative;
@@ -273,7 +278,7 @@ footer .flex-wrapper {
   .footer-links {
     display: block;
   }
-  
+
   address > h1 {
     text-align: left;
   }
@@ -330,6 +335,9 @@ footer .flex-wrapper {
     display: flex;
     justify-content: end;
     gap: 1rem;
+  }
+  .projects {
+    grid-template-columns: 1fr 1fr 1fr;
   }
   address > h1 {
     text-align: left;
