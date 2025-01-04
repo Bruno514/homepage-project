@@ -35,6 +35,7 @@ p {
   font-size: 1.5rem;
 }
 
+/* Header Section */
 #header-image {
   height: 25rem;
   display: flex;
@@ -46,6 +47,7 @@ p {
 
 header {
   display: flow-root;
+  margin-bottom: 4rem;
 }
 .h-shadow-wrapper {
   filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
@@ -82,6 +84,7 @@ header {
 }
 .header-author {
   color: white;
+  margin-left: 1rem;
   font-size: 3rem;
   text-align: right;
 }
@@ -94,8 +97,9 @@ header {
 }
 .about-title {
   text-align: center;
-  font-size: 2rem;
-  margin-top: 4rem;
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 .about-text {
   color: var(--fg-primary);
@@ -109,9 +113,103 @@ header {
   padding: 1rem;
 }
 
+/* My Work Section */
+
+main {
+  padding-inline: 2rem;
+}
+
+main > h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.project {
+  max-width: 20rem;
+  box-shadow: 4px 6px 8px rgba(50, 50, 0, 0.5);
+}
+
+.project-image {
+  padding-block: 4rem;
+  background-color: #7c75ca;
+  padding-inline: 4rem;
+  color: white;
+}
+.project-image > h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.project-about {
+  padding-top: 1rem;
+  padding-inline: 1.5rem;
+  padding-bottom: 4rem;
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-about p {
+  margin-top: 1rem;
+  color: var(--fg-primary);
+}
+/* Footer Section */
+
 #footer-image {
   display: block;
   width: 100%;
+}
+
+footer {
+  margin-top: 8rem;
+  background-color: var(--bg-primary);
+  color: white;
+}
+
+address {
+  padding-top: 2rem;
+  padding-inline: 1rem;
+  font-style: normal;
+}
+address > h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+footer .icon {
+  display: none;
+}
+
+.footer-text {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+footer .flex-wrapper {
+  display: flex;
+  font-size: 1rem;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.footer-links {
+  display: flex;
+  font-size: 1rem;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -160,9 +258,33 @@ header {
     white-space: nowrap;
     margin-left: 20rem;
   }
+
+  footer {
+    width: 100%;
+    display: flex;
+    padding: 3rem;
+  }
+
+  #footer-image {
+    width: 100%;
+    min-width: 0;
+    flex-grow: 0;
+  }
+  .footer-links {
+    display: block;
+  }
+  
+  address > h1 {
+    text-align: left;
+  }
 }
 
 @media screen and (min-width: 1024px) {
+  .h-background::before {
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0% 75%);
+    height: 38rem;
+  }
+
   .about {
     display: flex;
     align-items: center;
@@ -185,16 +307,34 @@ header {
     width: 90rem;
     margin-right: 0;
   }
+  .about-title {
+    text-align: left;
+    margin: 0;
+  }
   .about-text {
     flex-grow: 0;
     flex-shrink: 1;
+    margin-bottom: 1rem;
   }
   .header-image-wrapper {
     align-items: end;
     justify-content: start;
   }
   .header-image-wrapper .header-author {
-    margin-left: 0;
+    position: relative;
+    margin-left: 1rem;
+    text-align: left;
     right: 0;
+  }
+  .header-links {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+  }
+  address > h1 {
+    text-align: left;
+  }
+  .footer-links {
+    display: block;
   }
 }
